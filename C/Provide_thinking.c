@@ -5,17 +5,25 @@
 #include <stdlib.h> 
 #include <time.h>
 #include <sys/timeb.h>
+#include <string.h>
 #include "Provice_thinking.h"
 
-
-int main ()
+typedef struct sA
 {
-    int a[5] = {100, 200, 300, 400, 500};
-    printf("A+0 = %#p \n", a+0);
-    printf("A+1 = %#p \n", a+1);
-    printf("A+2 = %#p \n", a+2);
-    printf("A+3 = %#p \n", a+3);
-    printf("A+4 = %#p \n", a+4);
+    int a;
+};
 
-    return 0;
+
+void main()
+{
+    struct sA obj1;
+    struct sA *ptr;
+
+    struct sA obj2[2] = {100, 200};
+
+    obj1.a = 300;
+    ptr = &obj1;
+
+    printf("%d \n\n", obj1.a);
+    printf("%d \n", ptr->a);
 }
